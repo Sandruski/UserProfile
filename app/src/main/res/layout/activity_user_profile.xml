@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserProfileActivity">
+
+    <ImageView
+        android:id="@+id/backgroundView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="3:2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@color/colorAccent" />
+
+    <ImageView
+        android:id="@+id/profileView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="128dp"
+        android:layout_marginLeft="128dp"
+        android:layout_marginRight="128dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/backgroundView"
+        app:srcCompat="@color/colorPrimary" />
+
+    <TextView
+        android:id="@+id/nameView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:textColor="@android:color/background_light"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profileView"
+        tools:text="John Doe" />
+
+    <TextView
+        android:id="@+id/usernameView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:textColor="@android:color/background_light"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameView"
+        tools:text="\@johnny87" />
+
+    <View
+        android:id="@+id/rule"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/backgroundView" />
+
+    <TextView
+        android:id="@+id/followingView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="FOLLOWING"
+        app:layout_constraintEnd_toStartOf="@+id/followersView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/rule" />
+
+    <TextView
+        android:id="@+id/followersView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="FOLLOWERS"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/followingView"
+        app:layout_constraintTop_toTopOf="@+id/rule" />
+
+    <TextView
+        android:id="@+id/numFollowingView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/followingView"
+        app:layout_constraintStart_toStartOf="@+id/followingView"
+        app:layout_constraintTop_toBottomOf="@+id/followingView"
+        tools:text="100" />
+
+    <TextView
+        android:id="@+id/numFollowersView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/followersView"
+        app:layout_constraintStart_toStartOf="@+id/followersView"
+        app:layout_constraintTop_toBottomOf="@+id/followersView"
+        tools:text="100" />
+
+    <TextView
+        android:id="@+id/aboutView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="About Me"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rule" />
+
+    <TextView
+        android:id="@+id/descriptionView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/aboutView"
+        tools:text="John seems like a normal guy, with a normal like, and he looks good, like a celebrity even, but his picture was generated by an AI system developed at NVIDIA. Can you believe it?" />
+
+</android.support.constraint.ConstraintLayout>
