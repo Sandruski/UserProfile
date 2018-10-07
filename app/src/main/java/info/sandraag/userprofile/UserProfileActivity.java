@@ -7,6 +7,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.CircleCrop;
+import com.bumptech.glide.request.Request;
+import com.bumptech.glide.request.RequestOptions;
 import com.google.gson.Gson;
 
 import java.io.IOException;
@@ -43,7 +46,7 @@ public class UserProfileActivity extends AppCompatActivity {
         numFollowersView = findViewById(R.id.numFollowersView);
 
         try {
-            InputStream stream = getAssets().open("JohnDoe.json");
+            InputStream stream = getAssets().open("Sandra.json");
             InputStreamReader reader = new InputStreamReader(stream);
             userProfile = gson.fromJson(reader, UserProfile.class);
         }
@@ -52,12 +55,13 @@ public class UserProfileActivity extends AppCompatActivity {
             Toast.makeText(this, "json could not be read", Toast.LENGTH_SHORT).show();
         }
 
-        Glide.with(UserProfileActivity.this)
-                .load("file:///android_asset/JohnDoe.json")
+        Glide.with(this)
+                .load("file:///android_asset/SandraProfile.JPG")
+                .apply(RequestOptions.circleCropTransform())
                 .into(profileView);
 
-        Glide.with(UserProfileActivity.this)
-                .load("file:///android_asset/Background.json")
+        Glide.with(this)
+                .load("file:///android_asset/SandraBackground.JPG")
                 .into(backgroundView);
 
         updateUserProfile();
@@ -65,11 +69,10 @@ public class UserProfileActivity extends AppCompatActivity {
 
     private void updateUserProfile() {
 
-        nameView.setText(userProfile.getName());
-
-        usernameView.setText(userProfile.getName() + userProfile.getLastname());
-        descriptionView.setText(userProfile.getHandle());
+        nameView.setText(userProfile.getName() + " " + userProfile.getLastname());
+        usernameView.setText("@" + userProfile.getHandle());
         numFollowingView.setText(userProfile.getFollowing());
         numFollowersView.setText(userProfile.getFollowers());
+        descriptionView.setText(userProfile.getAbout());
     }
 }

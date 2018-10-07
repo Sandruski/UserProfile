@@ -23,4 +23,8 @@ public class UserProfile {
     public String getFollowers() {
         return followers;
     }
+
+    public String getAbout() {
+        return about;
+    }
 }
